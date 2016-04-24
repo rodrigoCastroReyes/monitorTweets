@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Twitter Visualizacion</title>
+		<meta charset="UTF-8">
+
+      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="style/style.css"/>
+      <script sync src="https://platform.twitter.com/widgets.js"></script>
+      <script type="text/javascript" src="lib/jquery-1.11.3.min.js" ></script>
+      
+      <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript" src="js/graph.js" ></script>
+      <style>
+         .tweet {
+            width: 100%;
+            margin : 5px 5px;
+            display: flex;
+            justify-content: center;
+         }
+        
+         .tweet iframe {
+            border: none !important;
+            box-shadow: none !important;
+         }        
+      </style>
+      <!--<script type="text/javascript" src="index.js"></script>-->
+	</head>
+	<body>
+      <div class="container-fluid">
+         <div class="">
+            <div class="row">
+               <div class="tittle text-center">
+                  <h1>TAWS</h1>
+               </div>
+            <div id="padre" class="text-center jumbotron">
+               <div class="grafico_1">
+                  <h2>#SeNecesitaEC</h2>
+                  <div id="chartSeNecesitaEc" class=".visible-xs-*"></div>
+               </div>
+               <div class="grafico_2">
+                  <h2>#SeOfreceEC</h2>
+                  <div id="chartSeOfreceEc" class=".visible-xs-*"></div>
+               </div>
+            </div>
+         </div>
+         </div>
+         <footer>
+            <div class="container">
+               <div class="row">
+                  <p class="text-muted">#SismoEcuador #ComunidadESPOL</p>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <div id="modalTweets" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Tweets Relacionados</h4>
+               </div>
+               <div class="modal-body ">
+                  <div id = "TweetsContainer" class="form-horizontal">
+                     
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pool Espol</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="style/style.css"/>
+		<script type="text/javascript" src="lib/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="js/graph.js" ></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			var params = { 'count' : 100 }
+			var request = 180;
+		 	function init(){
+		 		$.ajax({
+                	               data:  params,
+                	               url:   '/getTweets',
+                        	       type:  'get',
+                	               success: delay
+        		      });
+		 	}
+
+		 	function delay(response){
+                                setTimeout(function(){
+                                	callback(response);
+                                },5000);
+		 	}
+
+		 	function callback(response){
+                                params = response;
+                                console.log(request);
+                                if(request == 0){
+                                        request = 180;
+                                	console.log("limit window");
+                                }
+                                request -= 1;
+                                $.ajax({
+                                	data:  params,
+                                	url:   '/getTweets',
+                                	type:  'get',
+                                	success: delay
+                        	});
+		 	}
+
+		 	window.addEventListener('load',init,false);
+		</script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="">
+				<div class="row">
+					<div class="tittle text-center">
+						<h1>TAWS</h1>
+					</div>
+					<div id="padre" class="text-center jumbotron">
+						<div class="grafico_1">
+							<h2>#SeNecesitaEC</h2>
+							<div id="chart_div_1" class=".visible-xs-*"></div>
+						</div>
+						<div class="grafico_2">
+							<h2>#SeOfreceEC</h2>
+							<div id="chart_div_2" class=".visible-xs-*"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="container">
+					<div class="row">
+						<p class="text-muted">#SismoEcuador #ComunidadESPOL</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

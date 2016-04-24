@@ -1,0 +1,52 @@
+body{
+  background-color: #eee;
+}
+.tittle{
+  background-color: #0F2752;
+  color: #fff;
+  margin: 0;
+}
+footer{
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px;
+  padding: 15px 0;
+  height: 80px;
+  position: relative;
+	clear:both;
+  background-color: #0F2752;
+}
+
+.container .text-muted{
+  margin: 20px 0;
+}
+
+.text-muted{
+  color: #fff;
+}
+
+#padre{
+  width: 100%;
+}
+
+.grafico_1{
+  display: inline-block;
+  margin-right: 20px;
+  background-color: #eee;
+}
+.grafico_2{
+  display: inline-block;
+  background-color: #eee;
+}
+
+#TweetsContainer{
+  display: flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:center;
+}
+
+#chartSeNecesitaEc, #chartSeOfreceEc{
+  border: 1px solid white;
+  border-radius: 5px;
+}
